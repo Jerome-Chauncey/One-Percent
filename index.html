@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Self Regulation</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Self-Regulation Hub</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#guide">Self-Regulation Guide</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#insights">Insights</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+
+            <form class="d-flex ms-3" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search..."
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-light" type="submit">
+                Search
+              </button>
+            </form>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="forex-container">
+      <h3 id="forex-rates-heading" class="container-fluid p-0">
+        Live forex rates(updated daily)
+      </h3>
+      <ul id="forex-rates-list">
+        <li>Fetching data...</li>
+      </ul>
+    </div>
+
+    <section
+      class="hero-section text-center text-white d-flex align-items-center justify-content-center bg-dark"
+    >
+      <div class="container">
+        <h1 class="display-4 fw-bold">Empowering Financial Self-Regulation</h1>
+        <p class="lead">
+          Stay ahead of the market. Learn to self-regulate before crises happen.
+        </p>
+        <a
+          href="#learn-more"
+          class="btn btn-primary btn-lg mt-3"
+          id="learn-more-btn"
+          >Learn More</a
+        >
+      </div>
+    </section>
+
+    <!-- <section id="about" class="py-5 bg-light">
+        <div class="container text-center">
+          <h2 class="fw-bold">About Self-Regulation Hub</h2>
+          <p class="lead">
+            A platform designed to help financial market participants regulate themselves before crises occur.
+          </p>
+          <div class="row mt-4">
+            <div class="col-md-4">
+              <i class="fas fa-chart-line fa-3x text-primary"></i>
+              <h4 class="mt-3">Market Awareness</h4>
+              <p>Stay informed about market risks before they escalate.</p>
+            </div>
+            <div class="col-md-4">
+              <i class="fas fa-shield-alt fa-3x text-success"></i>
+              <h4 class="mt-3">Risk Management</h4>
+              <p>Learn strategies to mitigate financial risks effectively.</p>
+            </div>
+            <div class="col-md-4">
+              <i class="fas fa-users fa-3x text-danger"></i>
+              <h4 class="mt-3">Community</h4>
+              <p>Engage with other traders and investors in self-regulation.</p>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+    <section id="did-you-know" class="container mt-5">
+      <div class="card p-4 shadow-lg rounded-4">
+        <h2>Did you know?</h2>
+        <p>
+          In retail forex trading, neither you nor the broker actually take
+          ownership of the currencies being traded. When you place a trade, you
+          and your broker enter into an agreement where:
+        </p>
+        <ul>
+          <li>
+            ✅ If you predict correctly, you earn the difference between the
+            opening and closing price.
+          </li>
+          <li>
+            ❌ If you predict incorrectly, you pay the difference to the broker.
+          </li>
+        </ul>
+
+        <p>
+          This setup introduces counterparty credit risk the risk that the
+          broker may not have enough capital to pay you if they default. Since
+          your broker is the other party in your trade, ensuring they are
+          well-capitalized and regulated is crucial for security.
+        </p>
+      </div>
+    </section>
+
+    <section class="container mt-5">
+      <div class="card p-4 shadow-lg rounded-4">
+        <h2>What are you actually trading?</h2>
+
+        <ul>
+          <li>
+            You are entering into a contract with your broker, betting on
+            whether the price of one currency will rise or fall against another.
+          </li>
+          <li>
+            You don’t own the actual currency. You’re speculating on its price
+            movements.
+          </li>
+          <li>
+            The profit or loss comes from the difference in price between when
+            you enter and exit the trade.
+          </li>
+        </ul>
+        <p>This is called trading Contracts for Difference (CFDs)</p>
+      </div>
+    </section>
+
+    <section id="broker-risk-management" class="container mt-5">
+      <h2>How Forex Manage Risk</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped text-center">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Description</th>
+              <th>Risk Management Strategy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>A-Book (STP)</strong></td>
+              <td>Orders are passed directly to liquidity providers.</td>
+              <td>No direct exposue; earns through spreads and commissions.</td>
+            </tr>
+            <tr>
+              <td><strong>B-Book (Market Maker)</strong></td>
+              <td>Brokers take the opposite side of the trade.</td>
+              <td>
+                Uses internal hedging, risk limits, and spread adjustments.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Hybrid Model</strong></td>
+              <td>Combines A-Book and B-Book depending on trader profiles</td>
+              <td>
+                Profitable traders go to A-Book; less-experienced stay in
+                B-Book.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Risk Hedging</strong></td>
+              <td>Brokers hedge positions with liquidity providers.</td>
+              <td>Reduces market exposure and maintains stability.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="container mt-5">
+      <div class="card p-4 shadow-lg rounded-4">
+        <h2>Are the prices that your forex broker quotes you fair?</h2>
+
+        <section id="broker-risk-management" class="container mt-4">
+          <h2>When Forex Prices Are Fair</h2>
+
+          <ul>
+            <li>
+              <strong> Tied to Interbank Market Rates-</strong> If your broker
+              operates under an A-Book model (Straight Through Processing or
+              ECN), they simply pass market prices from liquidity providers to
+              you without interference.
+            </li>
+            <li>
+              <strong>Tight Spreads-</strong> If the bid-ask spread is low and
+              competitive, it suggests minimal broker intervention.
+            </li>
+            <li>
+              <strong>Regulated Brokers- </strong>Brokers regulated by reputable
+              authorities (e.g., FCA, CFTC, ASIC) must follow strict pricing
+              transparency rules.
+            </li>
+          </ul>
+          <h2>When Forex Prices May Be Manipulated</h2>
+          <ul>
+            <li>
+              <strong>B-Book Brokers (Market Makers)-</strong> These brokers
+              take the opposite side of your trade, meaning if you lose, they
+              win. Some may manipulate prices to trigger stop-loss orders.
+            </li>
+            <li>
+              <strong>Widened Spreads-</strong> During news events or volatile
+              periods, some brokers artificially widen the spread to make
+              trading more costly.
+            </li>
+            <li>
+              <strong>Slippage & Requotes-</strong> If your broker frequently
+              delays execution, leading to worse prices (negative slippage),
+              they may be interfering with your trades.
+            </li>
+
+            <li>
+              <strong>Stop-Hunting-</strong> Some brokers push prices slightly
+              past common stop-loss levels to force traders out before reversing
+              the trend.
+            </li>
+          </ul>
+
+          <h2>How to Ensure Fair Pricing</h2>
+          <ul class="checklist">
+            <li>✔️ Choose an ECN/STP broker for direct market access.</li>
+            <li>
+              ✔️ Check a third-party price feed (like TradingView or Bloomberg)
+              to compare your broker’s prices with actual market data.
+            </li>
+            <li>
+              ✔️ Look for a broker with low slippage and transparent execution
+              policies.
+            </li>
+            <li>
+              ✔️ Avoid unregulated brokers, as they may manipulate prices with
+              no oversight.
+            </li>
+          </ul>
+          <h2>Is the forex broker a legit Company?</h2>
+          <p>
+            Not all forex brokers are legitimate! Some are trusted financial
+            institutions, while others are
+            <strong>scams designed to take your money</strong>. Here’s how you
+            can tell the difference:
+          </p>
+        </section>
+      </div>
+    </section>
+
+    <section id="broker-risk-management" class="container mt-5">
+      <h2 style="color: blue">Signs of a Legitimate Forex Broker</h2>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped text-center">
+          <thead>
+            <tr>
+              <th>
+                <strong style="color: blue"
+                  >Regulated by a Trusted Authority</strong
+                ><br />
+                🇺🇸 CFTC/NFA (USA), 🇬🇧 FCA (UK), 🇦🇺 ASIC (Australia), 🇪🇺 CySEC
+                (Europe)
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <strong style="color: blue">Transparent Pricing & Fees</strong
+                ><br />Legit brokers clearly state their spreads, commissions,
+                and withdrawal fees without hidden charges.
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <strong style="color: blue">Fast & Reliable Withdrawals</strong
+                ><br />You should be able to withdraw profits without long
+                delays or excuses.
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <strong style="color: blue">Segregated Client Funds</strong
+                ><br />Reputable brokers keep your money separate from their own
+                operational funds, reducing fraud risks.
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <strong style="color: blue">Positive Trader Reviews</strong
+                ><br />Look at independent review sites like Trustpilot or
+                ForexPeaceArmy to see what real traders say.
+              </th>
+            </tr>
+          </thead>
+        </table>
+
+        <h2>Red Flags of a Scam Broker</h2>
+        <table class="table table-bordered table-striped text-center">
+          <thead>
+            <tr>
+              <th>
+                <strong style="color: red">Unregulated or Offshore </strong
+                ><br />
+                If a broker is registered in a shady location (e.g., St. Vincent
+                & the Grenadines), they may operate without oversight.
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <strong style="color: red">Unrealistic Promises</strong><br />If
+                they guarantee "high returns" or "no risk," it’s likely a scam.
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <strong style="color: red"
+                  >Deposit Bonuses with Hidden Rules</strong
+                ><br />Some brokers offer big bonuses but prevent you from
+                withdrawing profits unless you meet impossible conditions.
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <strong style="color: red"
+                  >Manipulated Trading Conditions</strong
+                ><br />Fake price spikes, frequent slippage, or stop-hunting can
+                indicate price manipulation.
+              </th>
+            </tr>
+            <tr>
+              <th>
+                <strong style="color: red">Difficult Withdrawals</strong
+                ><br />If they delay or deny withdrawals,
+                <span style="color: red">run!</span>
+              </th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </section>
+
+    <section id="did-you-know" class="container mt-5">
+      <div class="card p-4 shadow-lg rounded-4">
+        <h2>How to Verify a Broker’s Legitimacy</h2>
+        <ul class="checklist">
+          <li>
+            ✔️ Check Their Regulation Number on the regulator’s official
+            website.
+          </li>
+          <li>
+            ✔️ Search for Complaints on forums like ForexPeaceArmy, Trustpilot,
+            or Reddit.
+          </li>
+          <li>
+            ✔️ Test with a Small Deposit first before committing larger funds.
+          </li>
+        </ul>
+
+        <h2>Is it a Real Company?</h2>
+        <p>
+          Some forex brokers are legitimate financial firms that are regulated
+          by government authorities, while others are scam operations designed
+          to take traders' money. If you want to check whether a specific broker
+          is a real company, here’s what you should do:
+        </p>
+        <ul class="checklist">
+          <li>✔️ Verify Regulation</li>
+          <p>
+            Legitimate brokers are regulated by financial authorities. Search
+            for the broker’s name in these official databases:
+          </p>
+          <ul>
+            <li>🇺🇸 CFTC/NFA (USA) - NFA BASIC</li>
+            <li>🇬🇧 FCA (UK) - FCA Register</li>
+            <li>🇪🇺 CySEC (Europe) - CySEC Website</li>
+            <li>ASIC (Australia) - ASIC Register</li>
+          </ul>
+          <p>
+            <span style="color: red"
+              >If a broker claims to be regulated but is not listed on these
+              sites, it's a red flag!</span
+            >
+          </p>
+
+          <li>✔️ Check the Company’s Website & Contact Info</li>
+          <ul>
+            <li>Do they have a physical office address?</li>
+            <li>Is their contact number real (not just an online form)?</li>
+            <li>
+              A real company should have a transparent "About Us" page with
+              company history and executive team details.
+            </li>
+          </ul>
+          <li>✔️ Look for Trader Reviews</li>
+          <ul>
+            <li>Trustpilot</li>
+            <li>Forex Peace Army</li>
+            <li>Reddit & other trading forums</li>
+          </ul>
+          <li>✔️Test with a Small Deposit</li>
+          <ul>
+            <li>
+              If you’re unsure, deposit a small amount and try to withdraw it.
+              If they delay or deny withdrawals, it's likely a scam.
+            </li>
+          </ul>
+          <h2>Red Flags</h2>
+          <ul>
+            <li class="red-flags">
+              Too many complaints about withdrawal issues.
+            </li>
+            <li class="red-flags">
+              Sudden account bans when users try to withdraw profits.
+            </li>
+            <li class="red-flags">
+              Fake positive reviews (all 5-star ratings with generic comments).
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </section>
+
+    <script src="/index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
