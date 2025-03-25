@@ -1,22 +1,24 @@
-document.querySelector("form").addEventListener("submit", function(e){
-    e.preventDefault(); 
+document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    let searchQuery = document.querySelector("input[type = 'search']").value.toLowerCase();
-    let sections = document.querySelectorAll("section");
+  let searchQuery = document
+    .querySelector("input[type = 'search']")
+    .value.toLowerCase();
+  let sections = document.querySelectorAll("section");
 
-    let found = false;
+  let found = false;
 
-    sections.forEach(section =>{
-        if(section.innerText.toLocaleLowerCase().includes(searchQuery)){
-            section.scrollIntoView({behavior: "smooth"});
-            found = true;
-        }
-    })
-
-    if(!found){
-        alert("No matching content found.")
+  sections.forEach((section) => {
+    if (section.innerText.toLocaleLowerCase().includes(searchQuery)) {
+      section.scrollIntoView({ behavior: "smooth" });
+      found = true;
     }
-})
+  });
+
+  if (!found) {
+    alert("No matching content found.");
+  }
+});
 
 // document.addEventListener("DOMContentLoaded", function(){
 //     const navbarToggler = document.querySelector(".navbar-toggler")
@@ -41,46 +43,92 @@ document.querySelector("form").addEventListener("submit", function(e){
 //         }
 //     });
 // });
-  
 
-function fetchForexRate(){
-   fetch("https://api.exchangerate-api.com/v4/latest/USD")
-.then(response => {
-    if(!response.ok){
+function fetchForexRate() {
+  fetch("https://api.exchangerate-api.com/v4/latest/USD")
+    .then((response) => {
+      if (!response.ok) {
         throw new Error("Failed to fetch forex data");
-    }
-    return response.json()
-})
-.then(data => {
-console.log("Full API Response:", data);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Full API Response:", data);
 
-const forexList = document.getElementById("forex-rates-list");
-forexList.innerHTML = "";
+      const forexList = document.getElementById("forex-rates-list");
+      forexList.innerHTML = "";
 
-//currencies
-const currencies =["KES", "GBP", "USD", "JPY", "AUD"]
+      //currencies
+      const currencies = ["KES", "GBP", "USD", "JPY", "AUD"];
 
-currencies.forEach(currency => {
-    if (data.rates[currency]){
-        const rate = data.rates[currency].toFixed(4);
-        const listItem = document.createElement("li");
-        listItem.textContent = `USD/${currency}: ${rate}`;
-        forexList.appendChild(listItem)
-    }
-})
-})
-.catch(error =>{
-    console.error("Error:", error);
-    document.getElementById("forex-rates-list").innerHTML = "<li>Forex data unavaliable.</li>"
-})
-
+      currencies.forEach((currency) => {
+        if (data.rates[currency]) {
+          const rate = data.rates[currency].toFixed(4);
+          const listItem = document.createElement("li");
+          listItem.textContent = `USD/${currency}: ${rate}`;
+          forexList.appendChild(listItem);
+        }
+      });
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      document.getElementById("forex-rates-list").innerHTML =
+        "<li>Forex data unavaliable.</li>";
+    });
 }
-
 
 fetchForexRate();
 
 setInterval(fetchForexRate, 6000);
 
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("checklist-form");
+  const responsesList = document.getElementById("responses-list")
+    form.reset();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    console.log("Form submitted!");
+    const formData = new FormData(form);
+    const answers = {};
 
+    formData.forEach((value, key) => {
+      answers[key] = value;
+    });
+    console.log("Collected Data:", answers);
+    sendToDb(answers);
+    form.reset();
+  });
+  function sendToDb(data) {
+    fetch("https://regulation-hub.onrender.com/checklist", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log("Saved:", data))
+      .catch((error) => console.error("Error:", error));
+  }
+  function fetchResponses(){
+    fetch("https://regulation-hub.onrender.com/checklist")
+    .then((response) => response.json())
+        .then((data) => {
+            responsesList.innerHTML = "";
+            data.forEach((response, index) => {
+                const li = document.createElement("li");
+                li.className = "list-group-item";
+                
+                // Format response as readable text
+                li.innerHTML = `<strong>Response ${index + 1}:</strong><br>`;
+                for (const [key, value] of Object.entries(response)) {
+                    if (key !== "id") { 
+                        li.innerHTML += `<strong>${key}:</strong> ${value} <br>`;
+                    }
+                }
 
-
+                responsesList.appendChild(li);
+            });
+        })
+        .catch((error) => console.error("Error fetching responses:", error));
+}
+  fetchResponses();
+});
