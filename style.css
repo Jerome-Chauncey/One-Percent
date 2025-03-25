@@ -1,8 +1,4 @@
-body {
-  padding-top: 60px;
-  transition: padding-top 0.1s ease-in-out;
-  transition: 0.1s ease-in;
-}
+
 
 #forex-rates-list {
   display: flex;
@@ -10,13 +6,20 @@ body {
   justify-content: space-evenly;
   list-style: none;
   align-items: center;
-  background-color: red;
+  /* background-color: green; */
+  
   padding-left: 0px;
   margin-bottom: 0;
+  /* color: whitesmoke; */
+ 
 }
 
 #forex-rates-heading {
   font-size: 15px;
+  margin: 0;
+  /* color: whitesmoke;
+  background-color: green; */
+ 
 }
 
 #learn-more-btn {
@@ -38,3 +41,12 @@ p{
 .red-flags{
     color: red;
 }
+
+.list-key-qns{
+  list-style: none;
+}
+
+
+
+
+

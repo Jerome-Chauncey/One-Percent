@@ -18,29 +18,29 @@ document.querySelector("form").addEventListener("submit", function(e){
     }
 })
 
-document.addEventListener("DOMContentLoaded", function(){
-    const navbarToggler = document.querySelector(".navbar-toggler")
-    const navbarCollapse = document.querySelector(".navbar-collapse");
-    const content = document.querySelector("body");
+// document.addEventListener("DOMContentLoaded", function(){
+//     const navbarToggler = document.querySelector(".navbar-toggler")
+//     const navbarCollapse = document.querySelector(".navbar-collapse");
+//     const content = document.querySelector("body");
 
-    navbarCollapse.addEventListener("shown.bs.collapse", function (){
-       content.style.paddingTop = "255px"
-    })
-    navbarCollapse.addEventListener("hidden.bs.collapse", function (){
-        content.style.paddingTop = "60px";
-    })
+//     navbarCollapse.addEventListener("shown.bs.collapse", function (){
+//        content.style.paddingTop = "255px"
+//     })
+//     navbarCollapse.addEventListener("hidden.bs.collapse", function (){
+//         content.style.paddingTop = "60px";
+//     })
 
-    const learnMoreBtn = document.querySelector(".hero-section a");
+//     const learnMoreBtn = document.querySelector(".hero-section a");
 
-    learnMoreBtn.addEventListener("click", function (e){
-        e.preventDefault();
+//     learnMoreBtn.addEventListener("click", function (e){
+//         e.preventDefault();
 
-        const targetSection = document.querySelector("#learn-more");
-        if (targetSection){
-            targetSection.scrollIntoView({behavior: "smooth"});
-        }
-    });
-});
+//         const targetSection = document.querySelector("#learn-more");
+//         if (targetSection){
+//             targetSection.scrollIntoView({behavior: "smooth"});
+//         }
+//     });
+// });
   
 
 function fetchForexRate(){
@@ -80,3 +80,7 @@ currencies.forEach(currency => {
 fetchForexRate();
 
 setInterval(fetchForexRate, 6000);
+
+
+
+
