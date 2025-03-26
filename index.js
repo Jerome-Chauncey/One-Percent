@@ -81,10 +81,44 @@ fetchForexRate();
 
 setInterval(fetchForexRate, 6000);
 
+function fetchRedditNews() {
+  fetch("https://www.reddit.com/r/stocks/.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch news");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      const newsList = document.getElementById("news-list");
+      newsList.innerHTML = "";
+
+      data.data.children.forEach((post) => {
+        const newsItem = document.createElement("li");
+        const newsLink = document.createElement("a");
+
+
+        newsLink.textContent = post.data.title;
+        newsLink.href= `https:///www.reddit.com${post.data.permalink}`;
+        newsLink.target = "_blank";
+
+        newsItem.appendChild(newsLink);
+        newsList.appendChild(newsItem);
+      });
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      document.getElementById("news-list").innerHTML =
+        "<li>News data unavaliable.</li>";
+    });
+}
+fetchRedditNews();
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("checklist-form");
-  const responsesList = document.getElementById("responses-list")
-    form.reset();
+  const responsesList = document.getElementById("responses-list");
+  form.reset();
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     console.log("Form submitted!");
@@ -95,40 +129,41 @@ document.addEventListener("DOMContentLoaded", function () {
       answers[key] = value;
     });
     console.log("Collected Data:", answers);
-    sendToDb(answers);
+    sendToDb(answers).then(fetchResponses)
+    
     form.reset();
   });
   function sendToDb(data) {
-    fetch("https://regulation-hub.onrender.com/checklist", {
+    return fetch("https://regulation-hub.onrender.com/checklist", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     })
-      .then((res) => res.json())
-      .then((data) => console.log("Saved:", data))
+      .then((res) => console.log(res.json()))
+      .then((data) =>console.log(data))
       .catch((error) => console.error("Error:", error));
   }
-  function fetchResponses(){
+  function fetchResponses() {
     fetch("https://regulation-hub.onrender.com/checklist")
-    .then((response) => response.json())
-        .then((data) => {
-            responsesList.innerHTML = "";
-            data.forEach((response, index) => {
-                const li = document.createElement("li");
-                li.className = "list-group-item";
-                
-                // Format response as readable text
-                li.innerHTML = `<strong>Response ${index + 1}:</strong><br>`;
-                for (const [key, value] of Object.entries(response)) {
-                    if (key !== "id") { 
-                        li.innerHTML += `<strong>${key}:</strong> ${value} <br>`;
-                    }
-                }
+      .then((response) => response.json())
+      .then((data) => {
+        responsesList.innerHTML = "";
+        data.forEach((response, index) => {
+          const li = document.createElement("li");
+          li.className = "list-group-item";
 
-                responsesList.appendChild(li);
-            });
-        })
-        .catch((error) => console.error("Error fetching responses:", error));
-}
+          // Format response as readable text
+          li.innerHTML = `<strong>Response ${index + 1}:</strong><br>`;
+          for (const [key, value] of Object.entries(response)) {
+            if (key !== "id") {
+              li.innerHTML += `<strong>${key}:</strong> ${value} <br>`;
+            }
+          }
+
+          responsesList.appendChild(li);
+        });
+      })
+      .catch((error) => console.error("Error fetching responses:", error));
+  }
   fetchResponses();
 });
