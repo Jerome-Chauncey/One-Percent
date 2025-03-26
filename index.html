@@ -11,9 +11,13 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-dark text-white sticky-top">
+    <nav class="navbar navbar-expand-lg bg-dark text-white sticky-top"> 
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="#">One Percent</a>
         <button
@@ -87,14 +91,27 @@
           <h2 class="fw-bold">About One Percent</h2>
           <p class="lead">
             We empower traders and financial professionals to uphold integrity in the markets. Rather than waiting for regulators to act, we promote proactive <span class="fw-bold">self-regulation</span> to ensure fairness, transparency, and trust.          
+          </p>        
+          <h2 class="mt-5 fw-bold">Market Awareness</h2>
+          <p class="lead">Market awareness is key to responsible trading. Understanding how markets work, identifying legitimate brokers, recognizing <span class="fw-bold">fair pricing</span>, and <span class="fw-bold">managing risks</span> help protect your investments. Stay informed about market risks before they escalate to trade smarter and safer.                
           </p>
-
-              <!-- <i class="fas fa-chart-line fa-3x text-primary"></i> -->
-              <h2 class="mt-5 fw-bold">Market Awareness</h2>
-              <p class="lead">Market awareness is key to responsible trading. Understanding how markets work, identifying legitimate brokers, recognizing <span class="fw-bold">fair pricing</span>, and <span class="fw-bold">managing risks</span> help protect your investments. Stay informed about market risks before they escalate to trade smarter and safer.                
-              </p>
         </div>
-      </section>
+    </section>
+
+    
+      <!-- <div class="container mt-5">
+        <div class="row d-flex align-items-center  justify-content-center ">
+          <div class="col-sm-4">
+            <h2 class="fw-bold">About One Percent</h2>
+            <p class="lead">We empower traders and financial professionals to uphold integrity in the markets. Rather than waiting for regulators to act, we promote proactive <span class="fw-bold">self-regulation</span> to ensure fairness, transparency, and trust.</p>
+          </div>
+          <div class="col-sm-4">
+            <h2 class="fw-bold">Market Awareness</h2>
+            <p class="lead">Market awareness is key to responsible trading. Understanding how markets work, identifying legitimate brokers, recognizing <span class="fw-bold">fair pricing</span>, and <span class="fw-bold">managing risks</span> help protect your investments. Stay informed about market risks before they escalate to trade smarter and safer.</p>
+          </div>
+        </div>
+      </div> -->
+   
 
     <section id="did-you-know" class="container mt-5">
       <div class="card p-4 shadow-lg rounded-4">
@@ -154,13 +171,15 @@
     
       <section id="broker-risk-management" class="container mt-5">
         <div class="card p-4 shadow-lg rounded-4" >
+          <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#riskManagement">
+            How Forex Brokers Manage Risk (Expand/Collapse)
+          </button>
+        <div id="riskManagement" class="collapse">
         <h2>How Forex Brokers Manage Risk</h2>
   
-        <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#riskManagement">
-          How Forex Brokers Manage Risk (Expand/Collapse)
-        </button>
+
   
-        <div id="riskManagement" class="collapse show">
+ 
           <div class="table-responsive">
             <table class="table table-bordered table-striped text-center">
               <thead>
@@ -205,12 +224,14 @@
 
     <section class="container mt-5">
       <div class="card p-4 shadow-lg rounded-4">
-        <h2>Are the prices that your forex broker quotes you fair?</h2>
         <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#brokerQuotes">
           Are the prices that your forex broker quotes you fair? (Expand/Collapse)
         </button>
+        <div id="brokerQuotes" class="collapse">
+        <h2>Are the prices that your forex broker quotes you fair?</h2>
 
-        <div id="brokerQuotes" class="collapse show">
+
+
           <section id="broker-risk-management" class="container mt-4">
             <h2>When Forex Prices Are Fair</h2>
   
@@ -286,11 +307,13 @@
 
     <section id="broker-risk-management" class="container mt-5">
       <div class="card p-4 shadow-lg rounded-4">
-        <h2 style="color: blue">Signs of a Legitimate Forex Broker</h2>
-      <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#legitBrokers">
-        Signs of a Legitimate Forex Broker & Red Flags of a Scam Broker (Expand/Collapse)
-      </button>
-      <div id="legitBrokers" class="collapse show">
+        <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#legitBrokers">
+          Signs of a Legitimate Forex Broker & Red Flags of a Scam Broker (Expand/Collapse)
+        </button>
+        
+
+      <div id="legitBrokers" class="collapse">
+      <h2>Signs of a Legitimate Forex Broker</h2>
         <div class="table-responsive">
           <table class="table table-bordered table-striped text-center">
             <thead>
@@ -384,11 +407,12 @@
 
     <section id="did-you-know" class="container mt-5">
       <div class="card p-4 shadow-lg rounded-4">
-        <h2>How to Verify a Broker’s Legitimacy</h2>
+        
         <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#legitimacy">
           How to Verify a Broker’s Legitimacy(Expand/Collapse)
         </button>
-        <div id="legitimacy" class="collapse show">
+        <div id="legitimacy" class="collapse">
+        <h2>How to Verify a Broker’s Legitimacy</h2>
           <ul class="checklist">
             <li>
               ✔️ Check Their Regulation Number on the regulator’s official
@@ -471,11 +495,12 @@
 
         <section id="beforeTrustingABroker" class="container mt-5">
           <div class="card p-4 shadow-lg rounded-4">
-            <h2>Ask yourself this key questions</h2>
+            
             <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#keyQuestions">
               Ask yourself this key questions (Expand/Collapse)
             </button>
-            <div id="keyQuestions" class="collapse show">
+            <div id="keyQuestions" class="collapse">
+            <h2>Ask yourself this key questions</h2>
               <h4>1. Where is the broker located?</h4>
               <ul class="list-key-qns">
                 <li>✔️ A legitimate broker should have a physical office address listed on their website.</li>
@@ -546,13 +571,14 @@
 
 
         <section id="ethical-checklist" class="container mt-5">
-          <h2>Ethical Trading Checklist</h2>
+          <h2>Make sure you're on the right track. Fill this</h2>
           <div class="card p-4 shadow-lg rounded-4">
             <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#tradingChecklist">
               Ethical Trading Checklist
             </button>
             
-          <div id="tradingChecklist" class="collapse show">
+          <div id="tradingChecklist" class="collapse">
+            <h2>Ethical Trading Checklist</h2>
             <form id="checklist-form">
               <div class="mb-3">
                 <label for="question1" class="form-label">1. Enter the name of the broker</label>
@@ -636,14 +662,15 @@
  
           </div>
         </section>
-
+        
         <section id="Responses" class="container mt-5 card p-4 shadow-lg rounded-4">
           
-            <h2>Submitted Responses</h2>
+            
             <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#submittedResponses">
-              Submitted Responses
+              Submitted Responses (Check Me Out!)
             </button>
-            <div id="submittedResponses" class="collapse show">
+            <div id="submittedResponses" class="collapse">
+            <h2>Submitted Responses</h2>
               <ul id="responses-list" class="list-group">
               
               </ul>
@@ -653,19 +680,97 @@
         </section>
 
         <section id="press-releases" class="container mt-5 card p-4 shadow-lg rounded-4">
-          <h2>News & Press Releases</h2>
+          <h2>Reddit News & Press Releases</h2>
           <button class="btn btn-primary mb3" type="button" data-bs-toggle="collapse" data-bs-target="#newsPress">
             News & Press Releases
           </button>
-          <div id="newsPress" class="collapse show">
+          <div id="newsPress" class="collapse">
             <ul id="news-list">
 
             </ul>
           </div>
 
         </section>
-        
-        
+        <footer class="bg-dark text-white">
+          <div class="container px-3 px-lg-0">
+            <div class="row">
+              <div class="flex-column d-flex flex-sm-row justify-content align-items-center justify-content-sm-between">
+                <a href="https://jerome-chauncey.github.io/One-Percent/">
+                  <img src="logo-7402592_640.png" alt="One percent Logo Footer" class="Logo" height="50" width="50">
+                </a>
+                <div class="social-network mt4 mt-sm-0 flex-wrap gap-2 gap-md-4">
+                  <a href="https://github.com/Jerome-Chauncey" title="Github" target="_blank">
+                    <img src="github.png" alt="Github" class="social-icon" width="50" height="50"> 
+                  </a> 
+                  <a href="https://www.instagram.com/chaunceyyy__/" title="Instagram" target="_blank">
+                    <img src="https://eq-cdn.equiti-me.com/website/documents/instagram_BOVNLvi.svg" alt="Instagram" class="social-icon" width="50" height="50"> 
+                  </a> 
+                  <a href="https://www.linkedin.com/in/jerome-chauncey-100bab244" title="Linkedin" target="_blank">
+                    <img src="https://eq-cdn.equiti-me.com/website/documents/linkedin_7mDS4co.svg" alt="LinkedIn" class="social-icon" width="50" height="50"> 
+                  </a> 
+                </div>
+              </div>
+            </div>
+            <div class="row">
+            <div class="order-2 order-sm-1 col-12 col-sm-9 col-lg-10 row row-cols-2 row-cols-lg-5 row-gap-5" id="tradingTools">
+              <div class="block-column">
+                <div class>
+                  <div class="block-section_title">
+                    <span class="title h6">Trading Tools</span>
+                  </div>
+                  <div class="block-Divider">
+                    <hr>
+                  </div>
+                  <div class="block-page_link">
+                    <a href="https://www.myfxbook.com/" target="_blank">Myfxbook</a>
+                  </div>
+                  <div class="block-page_link">
+                    <a href="https://www.fxblue.com/" target="_blank">Fxblue</a>
+                  </div>
+                  <div class="block-page_link">
+                    <a href="https://www.forexfactory.com/" target="_blank">ForexFactory</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="order-1 order-sm-2 col-12 col-sm-3 col-lg-2 mb-4 mb-sm-0">
+              <span class="title h6 mb-3">Contact Us</span>
+              <div class="block-Divider">
+                <hr>
+              </div>
+              <ul class="list-unstyled d-flex flex-column gap-3">
+                <li class="d-flex align-items-start gap-2">
+                  <img src="https://eq-cdn.equiti-me.com/website/documents/phone_talk_mvMQuZ3.svg" alt="Phone Talk" width="24" height="24" class="contact-icon">
+                  <div class="d-flex flex-column align-items-start">
+                    <a href="tel: +254714923182" class="m-0 title page-link" target="_blank">Phone</a>
+                    <small class="m-0 direction-ltr">0714923182</small>
+                  </div>
+                </li>
+                <li class="d-flex align-items-start gap-2">
+                  <img src="https://eq-cdn.equiti-me.com/website/documents/email_jdEIIQc.svg" width="24" height="24" alt="Email" class="contact-icon">
+                  <div class="d-flex flex-column align-items-start">
+                    <a href="mailto: jerome.chauncey@student.moringaschool.com" class="m-0 title page-link">Email</a> 
+                  </div> 
+                </li>
+              </ul>
+            </div>
+          </div>
+          </div>
+          
+          <br>
+          <div class="d-flex justify-content-center"> 
+            <div class="text-start">
+              <p>Margined FX and contracts for difference are complex leveraged products which carry a high level of risk and can result in losses that exceed your initial investment. We recommend you seek professional advice before investing.</p>
+            <p>Any analysis, opinion, commentary or research-based material on our website is for information and educational purposes only and is not, under any circumstances, intended to be an offer, recommendation, advice or solicitation to buy or sell.</p>
+            <p>The information on this site is not directed at residents of the United States, Belgium, Canada and Singapore and is not intended for use by any person in any jurisdiction where such use would be contrary to local law or regulation.</p>
+            <div class="copyright px-2 px-sm-0">
+              <p>© 2025 One Percent, All Rights Reserved</p>
+            </div>
+            </div>
+          </div>
+
+        </footer> 
+
 
     
 

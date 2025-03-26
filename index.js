@@ -53,7 +53,7 @@ function fetchForexRate() {
       return response.json();
     })
     .then((data) => {
-      console.log("Full API Response:", data);
+      
 
       const forexList = document.getElementById("forex-rates-list");
       forexList.innerHTML = "";
@@ -113,7 +113,7 @@ function fetchRedditNews() {
     });
 }
 fetchRedditNews();
-
+setInterval(fetchRedditNews, 6000);
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("checklist-form");

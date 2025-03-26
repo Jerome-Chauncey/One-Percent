@@ -46,7 +46,27 @@ p{
   list-style: none;
 }
 
+footer{
+padding: 64px 16px;
+margin-top: 20px;
+  
+}
 
+.social-icon{
+  filter: invert(28%) sepia(32%) saturate(308%) hue-rotate(359deg); 
+  padding: 5px;
+}
 
+.social-network a:hover .social-icon {
+  filter: invert(85%) sepia(12%) saturate(318%) hue-rotate(359deg);
+}
+
+.contact-icon{
+  filter: invert(28%) sepia(32%) saturate(308%) hue-rotate(359deg);
+}
+
+.contact-icon:hover{
+  filter: invert(85%) sepia(12%) saturate(318%) hue-rotate(359deg); 
+}
 
 
