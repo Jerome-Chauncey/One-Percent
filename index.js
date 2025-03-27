@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
     form.reset();
   });
   function sendToDb(data) {
-    return fetch("https://regulation-hub.onrender.com/checklist", {
+    return fetch("https://json-server-9nao.onrender.com/api", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => console.error("Error:", error));
   }
   function fetchResponses() {
-    fetch("https://regulation-hub.onrender.com/checklist")
+    fetch("https://json-server-9nao.onrender.com/api")
       .then((response) => response.json())
       .then((data) => {
         responsesList.innerHTML = "";
