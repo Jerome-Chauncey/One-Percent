@@ -131,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Collected Data:", answers);
     sendToDb(answers).then(fetchResponses)
     
+    
     form.reset();
   });
   function sendToDb(data) {
@@ -139,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     })
-      .then((res) => console.log(res.json()))
+      .then((res) => res.json())
       .then((data) =>console.log(data))
       .catch((error) => console.error("Error:", error));
   }
