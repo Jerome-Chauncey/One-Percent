@@ -69,4 +69,8 @@ margin-top: 20px;
   filter: invert(85%) sepia(12%) saturate(318%) hue-rotate(359deg); 
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 

@@ -17,9 +17,21 @@
   />
   </head>
   <body>
+    <header class="bg-dark text-white sticky-top"> 
+      <div class="container px-3 px-lg-0">
+        <div class="d-flex justify-content-center">
+          <div class="text-start">
+            <p>Online Forex/CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. 84.62% of retail investor accounts lose money when trading Online Forex/CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing money.
+            </p>
+          </div>
+        </div>
+      </div>
+    
     <nav class="navbar navbar-expand-lg bg-dark text-white sticky-top"> 
       <div class="container-fluid">
-        <a class="navbar-brand text-white" href="#">One Percent</a>
+        <a class="navbar-brand text-white" href="https://jerome-chauncey.github.io/One-Percent/">
+          <img src="logo-7402592_640.png" alt="One percent Logo Footer" class="Logo" height="50" width="50">
+        </a>
         <button
           class="navbar-toggler bg-white"
           type="button"
@@ -34,15 +46,11 @@
         >
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link text-white" href="#about">About</a>
+              <a class="nav-link text-white" href="#footer">Trading Tools</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#guide">One Percent Guide</a>
+              <a class="nav-link text-white" href="#footer">Contact Us</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#insights">Insights</a>
-            </li>
-            <li class="nav-item"><a class="nav-link text-white" href="#faq">FAQ</a></li>
           </ul>
             <form class="d-flex ms-3" role="search">
               <input
@@ -59,7 +67,7 @@
         </div>
       </div>
     </nav>
-
+  </header>
     <div id="forex-container" >
       <!-- <h3 id="forex-rates-heading" class="container-fluid p-0 bg-dark text-white">
         Live forex rates(updated daily)
@@ -405,7 +413,7 @@
       
     </section>
 
-    <section id="did-you-know" class="container mt-5">
+    <section class="container mt-5">
       <div class="card p-4 shadow-lg rounded-4">
         
         <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#legitimacy">
@@ -663,9 +671,10 @@
           </div>
         </section>
         
-        <section id="Responses" class="container mt-5 card p-4 shadow-lg rounded-4">
+        <section id="Responses" class="container mt-5">
           
             
+          <div class="card p-4 shadow-lg rounded-4">
             <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#submittedResponses">
               Submitted Responses (Check Me Out!)
             </button>
@@ -675,23 +684,27 @@
               
               </ul>
             </div>
+          </div>
 
           
         </section>
 
-        <section id="press-releases" class="container mt-5 card p-4 shadow-lg rounded-4">
+        <section id="press-releases" class="container mt-5">
           <h2>Reddit News & Press Releases</h2>
-          <button class="btn btn-primary mb3" type="button" data-bs-toggle="collapse" data-bs-target="#newsPress">
-            News & Press Releases
-          </button>
-          <div id="newsPress" class="collapse">
-            <ul id="news-list">
-
-            </ul>
+          <div class="card p-4 shadow-lg rounded-4">
+            <button class="btn btn-primary mb3" type="button" data-bs-toggle="collapse" data-bs-target="#newsPress">
+              News & Press Releases
+            </button>
+            <div id="newsPress" class="collapse">
+              <ul id="news-list">
+  
+              </ul>
+            </div>
           </div>
+          
 
         </section>
-        <footer class="bg-dark text-white">
+        <footer class="bg-dark text-white" id="footer">
           <div class="container px-3 px-lg-0">
             <div class="row">
               <div class="flex-column d-flex flex-sm-row justify-content align-items-center justify-content-sm-between">
@@ -716,7 +729,7 @@
               <div class="block-column">
                 <div class>
                   <div class="block-section_title">
-                    <span class="title h6">Trading Tools</span>
+                    <span class="title h6" id="tradingTools">Trading Tools</span>
                   </div>
                   <div class="block-Divider">
                     <hr>
@@ -738,7 +751,7 @@
               <div class="block-Divider">
                 <hr>
               </div>
-              <ul class="list-unstyled d-flex flex-column gap-3">
+              <ul class="list-unstyled d-flex flex-column gap-3" id="contact-us">
                 <li class="d-flex align-items-start gap-2">
                   <img src="https://eq-cdn.equiti-me.com/website/documents/phone_talk_mvMQuZ3.svg" alt="Phone Talk" width="24" height="24" class="contact-icon">
                   <div class="d-flex flex-column align-items-start">
