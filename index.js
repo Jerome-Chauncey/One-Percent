@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
     form.reset();
   });
   function sendToDb(data) {
-    return fetch("https://json-server-9nao.onrender.com/api", {
+    return fetch("https://json-server-9nao.onrender.com/api/Responses", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => console.error("Error:", error));
   }
   function fetchResponses() {
-    fetch("https://json-server-9nao.onrender.com/api")
+    fetch("https://json-server-9nao.onrender.com/api/Responses")
       .then((response) => response.json())
       .then((data) => {
         responsesList.innerHTML = "";
