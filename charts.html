@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charts</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="icon" href="logo-7402592_640.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header class="bg-dark text-white sticky-top">
+      <div class="container px-3 px-lg-0">
+        <div class="d-flex justify-content-center">
+          <div class="text-start">
+            <p>
+              Online Forex/CFDs are complex instruments and come with a high
+              risk of losing money rapidly due to leverage. 84.62% of retail
+              investor accounts lose money when trading Online Forex/CFDs. You
+              should consider whether you understand how CFDs work and whether
+              you can afford to take the high risk of losing money.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar navbar-expand-lg bg-dark text-white sticky-top">
+        <div class="container-fluid">
+          <a
+            class="navbar-brand text-white"
+            href="https://jerome-chauncey.github.io/One-Percent/"
+          >
+            <img
+              src="logo-7402592_640.png"
+              alt="One percent Logo Footer"
+              class="Logo"
+              height="50"
+              width="50"
+            />
+          </a>
+          <button
+            class="navbar-toggler bg-white"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="/charts.html">Live Market Prices</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#footer-chart">Trading Tools</a> 
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#footer-chart">Contact Us</a> 
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="tradingview-widget-container">
+      <div id="tradingview_chart"></div>
+      <script
+        type="text/javascript"
+        src="https://s3.tradingview.com/tv.js"
+      ></script>
+      <script>
+        new TradingView.widget({
+          container_id: "tradingview_chart",
+          width: "100%",
+          height: "100%",
+          symbol: "EURUSD",
+          interval: "D",
+          theme: "dark",
+          style: "2",
+          locale: "en",
+          tooblar_bg: "#f1f3f6",
+          hide_side_toolbar: false,
+          allow_symbol_change: true,
+          save_image: true,
+        });
+      </script>
+    </div>
+    <footer class="bg-dark text-white" id="footer-chart">
+      <div class="container px-3 px-lg-0">
+        <div class="row">
+          <div
+            class="flex-column d-flex flex-sm-row justify-content align-items-center justify-content-sm-between"
+          >
+            <a href="https://jerome-chauncey.github.io/One-Percent/">
+              <img
+                src="logo-7402592_640.png"
+                alt="One percent Logo Footer"
+                class="Logo"
+                height="50"
+                width="50"
+              />
+            </a>
+            <div class="social-network mt4 mt-sm-0 flex-wrap gap-2 gap-md-4">
+              <a
+                href="https://github.com/Jerome-Chauncey"
+                title="Github"
+                target="_blank"
+              >
+                <img
+                  src="github.png"
+                  alt="Github"
+                  class="social-icon"
+                  width="50"
+                  height="50"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/chaunceyyy__/"
+                title="Instagram"
+                target="_blank"
+              >
+                <img
+                  src="https://eq-cdn.equiti-me.com/website/documents/instagram_BOVNLvi.svg"
+                  alt="Instagram"
+                  class="social-icon"
+                  width="50"
+                  height="50"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/jerome-chauncey-100bab244"
+                title="Linkedin"
+                target="_blank"
+              >
+                <img
+                  src="https://eq-cdn.equiti-me.com/website/documents/linkedin_7mDS4co.svg"
+                  alt="LinkedIn"
+                  class="social-icon"
+                  width="50"
+                  height="50"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="order-2 order-sm-1 col-12 col-sm-9 col-lg-10 row row-cols-2 row-cols-lg-5 row-gap-5"
+          >
+            <div class="block-column">
+              <div class>
+                <div class="block-section_title">
+                  <span class="title h6" id="tradingTools">Trading Tools</span>
+                </div>
+                <div class="block-Divider">
+                  <hr />
+                </div>
+                <div class="block-page_link">
+                  <a href="https://www.myfxbook.com/" target="_blank"
+                    >Myfxbook</a
+                  >
+                </div>
+                <div class="block-page_link">
+                  <a href="https://www.fxblue.com/" target="_blank">Fxblue</a>
+                </div>
+                <div class="block-page_link">
+                  <a href="https://www.forexfactory.com/" target="_blank"
+                    >ForexFactory</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order-1 order-sm-2 col-12 col-sm-3 col-lg-2 mb-4 mb-sm-0">
+            <span class="title h6 mb-3">Contact Us</span>
+            <div class="block-Divider">
+              <hr />
+            </div>
+            <ul class="list-unstyled d-flex flex-column gap-3" id="contact-us">
+              <li class="d-flex align-items-start gap-2">
+                <img
+                  src="https://eq-cdn.equiti-me.com/website/documents/phone_talk_mvMQuZ3.svg"
+                  alt="Phone Talk"
+                  width="24"
+                  height="24"
+                  class="contact-icon"
+                />
+                <div class="d-flex flex-column align-items-start">
+                  <a
+                    href="tel+254714923182"
+                    class="m-0 title page-link"
+                    target="_blank"
+                    >Phone</a
+                  >
+                  <small class="m-0 direction-ltr">0714923182</small>
+                </div>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <img
+                  src="https://eq-cdn.equiti-me.com/website/documents/email_jdEIIQc.svg"
+                  width="24"
+                  height="24"
+                  alt="Email"
+                  class="contact-icon"
+                />
+                <div class="d-flex flex-column align-items-start">
+                  <a
+                    href="mailtojerome.chauncey@student.moringaschool.com"
+                    class="m-0 title page-link"
+                    >Email</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <div class="d-flex justify-content-center">
+        <div class="text-start">
+          <p>
+            Margined FX and contracts for difference are complex leveraged
+            products which carry a high level of risk and can result in losses
+            that exceed your initial investment. We recommend you seek
+            professional advice before investing.
+          </p>
+          <p>
+            Any analysis, opinion, commentary or research-based material on our
+            website is for information and educational purposes only and is not,
+            under any circumstances, intended to be an offer, recommendation,
+            advice or solicitation to buy or sell.
+          </p>
+          <p>
+            The information on this site is not directed at residents of the
+            United States, Belgium, Canada and Singapore and is not intended for
+            use by any person in any jurisdiction where such use would be
+            contrary to local law or regulation.
+          </p>
+          <div class="copyright px-2 px-sm-0">
+            <p>© 2025 One Percent, All Rights Reserved</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

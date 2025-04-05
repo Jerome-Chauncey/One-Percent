@@ -52,6 +52,10 @@ margin-top: 20px;
   
 }
 
+#footer-chart{
+  margin-top: 0;
+}
+
 .social-icon{
   filter: invert(28%) sepia(32%) saturate(308%) hue-rotate(359deg); 
   padding: 5px;
@@ -71,6 +75,12 @@ margin-top: 20px;
 
 html{
   scroll-behavior: smooth;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
 
